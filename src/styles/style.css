@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-gray-100 font-primary text-gray-700;
+    }
+}
+
+@layer components {
+    .primary-button {
+        @apply flex items-center gap-2 rounded-md bg-primary-500 px-3 py-2 text-sm font-bold uppercase text-white transition-all hover:bg-primary-400;
+    }
+}

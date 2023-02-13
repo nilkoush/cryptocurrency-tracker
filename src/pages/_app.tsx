@@ -1,6 +1,22 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import '@/styles/style.css';
+import { Rubik } from '@next/font/google';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const rubik = Rubik({
+    subsets: ['latin'],
+});
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+    return (
+        <>
+            <style jsx global>
+                {`
+                    :root {
+                        --primary-font: ${rubik.style.fontFamily};
+                    }
+                `}
+            </style>
+            <Component {...pageProps} />;
+        </>
+    );
 }
